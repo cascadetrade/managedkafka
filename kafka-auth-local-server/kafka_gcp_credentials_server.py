@@ -99,11 +99,10 @@ class AuthHandler(http.server.BaseHTTPRequestHandler):
 
 
 def run_server():
-  server_address = ('localhost', 14293)
+  server_address = ('0.0.0.0', 14293)
   server = http.server.ThreadingHTTPServer(server_address, AuthHandler)
   print(
-      'Serving on localhost:14293. This is not accessible outside of the '
-      'current machine.'
+      'Serving on localhost:0.0.0.0'
   )
   server.serve_forever()
 
